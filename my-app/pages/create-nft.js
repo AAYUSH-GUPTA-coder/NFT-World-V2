@@ -79,7 +79,7 @@ export default function CreateItem() {
     <div className="flex justify-center">
       <div className="w-1/2 flex flex-col pb-12" style={{ marginTop: "60px" }}>
         <input
-          placeholder="Asset Name"
+          placeholder="NFT Name"
           className="mt-8 border rounded p-4 input"
           onChange={
             (e) => updateFormInput({ ...formInput, name: e.target.value })
@@ -87,14 +87,14 @@ export default function CreateItem() {
           }
         />
         <textarea
-          placeholder="Asset Description"
+          placeholder="NFT Description"
           className="mt-2 border rounded p-4 input"
           onChange={(e) =>
             updateFormInput({ ...formInput, description: e.target.value })
           }
         />
         <input
-          placeholder="Asset Price in ETH"
+          placeholder="NFT Price in MATIC"
           className="mt-2 border rounded p-4 input"
           onChange={(e) =>
             updateFormInput({ ...formInput, price: e.target.value })
@@ -112,7 +112,7 @@ export default function CreateItem() {
           onClick={listNFTForSale}
           className="font-bold mt-4  text-white rounded p-4 shadow-lg btn2"
         >
-          Create Digital Asset
+          Create NFT
         </button>
       </div>
     </div>

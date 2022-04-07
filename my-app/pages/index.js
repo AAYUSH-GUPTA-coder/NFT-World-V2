@@ -93,7 +93,7 @@ export default function Home() {
                   </button>
                   <div className="user-info">
                     <h3 className="text text2">Price</h3>
-                    <h3 className="text2">{nft.price} ETH</h3>
+                    <h3 className="text2">{nft.price} MATIC</h3>
                   </div>
                 </div>
               </div>

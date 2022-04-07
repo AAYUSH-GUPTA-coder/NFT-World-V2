@@ -1888,7 +1888,7 @@
   "resolved" "https://registry.npmjs.org/ip-regex/-/ip-regex-4.3.0.tgz"
   "version" "4.3.0"
 
-"ipfs-core-types@^0.10.2":
+"ipfs-core-types@^0.10.0", "ipfs-core-types@^0.10.2":
   "integrity" "sha512-IyPCAiiPiZ4qmmBFgh+wSS3aAQya5Ck+9lDYjBCw1+hK3SC3RzEP49CWqQMKQYbMnaa9pY1GsnGJkLC0TiE2vA=="
   "resolved" "https://registry.npmjs.org/ipfs-core-types/-/ipfs-core-types-0.10.2.tgz"
   "version" "0.10.2"
@@ -1899,7 +1899,7 @@
     "multiaddr" "^10.0.0"
     "multiformats" "^9.5.1"
 
-"ipfs-core-utils@^0.14.2":
+"ipfs-core-utils@^0.14.0":
   "integrity" "sha512-wgyg4QRSokSIxnhU1qTJQoEz/gzf6WHB4zBKTfMrQuiF55943aF06v3x2tZ4l+Hcgr2yEa7COSapcfCFKFsuoA=="
   "resolved" "https://registry.npmjs.org/ipfs-core-utils/-/ipfs-core-utils-0.14.2.tgz"
   "version" "0.14.2"
@@ -1925,10 +1925,10 @@
     "timeout-abort-controller" "^3.0.0"
     "uint8arrays" "^3.0.0"
 
-"ipfs-http-client@^56.0.2":
-  "integrity" "sha512-IeIJJo6CDNCnTFz2hTSzzBDX34/jJmlyxk65NJAS+kgvel9aPRYaSestymDJWvOZj4/bBtiJ8X2CsRQoaVyIBg=="
-  "resolved" "https://registry.npmjs.org/ipfs-http-client/-/ipfs-http-client-56.0.2.tgz"
-  "version" "56.0.2"
+"ipfs-http-client@^56.0.0":
+  "integrity" "sha512-JF3on9c0hB9XHk/UCxbyC6rSpERuj8F/0QcN/HImZoHNUKZ0/T8DpgVopocKdmGi1gr3Izlop7poaXomSt8Nug=="
+  "resolved" "https://registry.npmjs.org/ipfs-http-client/-/ipfs-http-client-56.0.0.tgz"
+  "version" "56.0.0"
   dependencies:
     "@ipld/dag-cbor" "^7.0.0"
     "@ipld/dag-json" "^8.0.1"
@@ -1937,14 +1937,14 @@
     "dag-jose" "^1.0.0"
     "debug" "^4.1.1"
     "err-code" "^3.0.1"
-    "ipfs-core-types" "^0.10.2"
-    "ipfs-core-utils" "^0.14.2"
+    "ipfs-core-types" "^0.10.0"
+    "ipfs-core-utils" "^0.14.0"
     "ipfs-utils" "^9.0.2"
     "it-first" "^1.0.6"
     "it-last" "^1.0.4"
     "merge-options" "^3.0.4"
     "multiaddr" "^10.0.0"
-    "multiformats" "^9.5.1"
+    "multiformats" "^9.4.13"
     "parse-duration" "^1.0.0"
     "stream-to-it" "^0.2.2"
     "uint8arrays" "^3.0.0"
@@ -2350,7 +2350,7 @@
     "uint8arrays" "^3.0.0"
     "varint" "^6.0.0"
 
-"multiformats@^9.0.2", "multiformats@^9.4.2", "multiformats@^9.4.5", "multiformats@^9.5.1", "multiformats@^9.5.4":
+"multiformats@^9.0.2", "multiformats@^9.4.13", "multiformats@^9.4.2", "multiformats@^9.4.5", "multiformats@^9.5.1", "multiformats@^9.5.4":
   "integrity" "sha512-fCCB6XMrr6CqJiHNjfFNGT0v//dxOBMrOMqUIzpPc/mmITweLEyhvMpY9bF+jZ9z3vaMAau5E8B68DW77QMXkg=="
   "resolved" "https://registry.npmjs.org/multiformats/-/multiformats-9.6.4.tgz"
   "version" "9.6.4"

@@ -9,7 +9,6 @@ export default function Home() {
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
     loadNFTs();
-    console.log(process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_URL);
   }, []);
 
   async function loadNFTs() {

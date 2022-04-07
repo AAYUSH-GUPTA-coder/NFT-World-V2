@@ -12,7 +12,7 @@
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "ethers": "^5.6.2",
-    "ipfs-http-client": "^56.0.0",
+    "ipfs-http-client": "^50.1.2",
     "next": "12.1.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",

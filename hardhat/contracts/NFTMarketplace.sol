@@ -1,18 +1,18 @@
 // SPDX-License-Identifier: MIT
+// Created by Aayush Gupta, twitter @Aayush_gupta_ji
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-import "hardhat/console.sol";
-
 contract NFTMarketplace is ERC721URIStorage {
     using Counters for Counters.Counter;
+    // helps us to Use Counter library to increase TokenID of NFT
     Counters.Counter private _tokenIds;
     Counters.Counter private _itemsSold;
 
-    // the price marketplace get after selling NFT
+    // the price marketplace get for listing NFT for Sale
     uint256 listingPrice = 0.0025 ether;
     address payable owner;
 
@@ -71,6 +71,7 @@ contract NFTMarketplace is ERC721URIStorage {
     }
 
     // it is private function excuted inside the contract without the calling/interference of user
+    // function of create NFT
     function createMarketItem(uint256 tokenId, uint256 price) private {
         require(price > 0, "Price must be at least 1 wei");
         require(

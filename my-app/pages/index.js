@@ -1,15 +1,17 @@
 import { ethers } from "ethers";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
 import { abi, MARKET_PLACE_ADDRESS } from "../constants";
 
 export default function Home() {
   const [nfts, setNfts] = useState([]);
+  const [walletConnected, setWalletConnected] = useState(false);
+  const web3ModalRef = useRef();
   const [loadingState, setLoadingState] = useState("not-loaded");
-  useEffect(() => {
-    loadNFTs();
-  }, []);
+  // useEffect(() => {
+  //   loadNFTs();
+  // }, []);
 
   async function loadNFTs() {
     /* create a generic provider and query for unsold market items */
@@ -51,11 +53,7 @@ export default function Home() {
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
-    const contract = new ethers.Contract(
-      MARKET_PLACE_ADDRESS,
-      abi,
-      signer
-    );
+    const contract = new ethers.Contract(MARKET_PLACE_ADDRESS, abi, signer);
 
     /* user will be prompted to pay the asking price to complete the transaction */
 
@@ -67,6 +65,53 @@ export default function Home() {
     await transaction.wait();
     loadNFTs();
   }
+
+  const getProviderOrSigner = async (needSigner = false) => {
+    // Connect to Metamask
+    // Since we store `web3Modal` as a reference, we need to access the `current` value to get access to the underlying object
+    const provider = await web3ModalRef.current.connect();
+    const web3Provider = new ethers.providers.Web3Provider(provider);
+
+    // If user is not connected to the Rinkeby network, let them know and throw an error
+    const { chainId } = await web3Provider.getNetwork();
+    if (chainId !== 80001) {
+      window.alert("Change the network to Mumbai");
+      // throw new Error("Change network to Mumbai");
+    }
+
+    if (needSigner) {
+      const signer = web3Provider.getSigner();
+      return signer;
+    }
+    return web3Provider;
+  };
+
+  const connectWallet = async () => {
+    try {
+      // Get the provider from web3Modal, which in our case is MetaMask
+      // When used for the first time, it prompts the user to connect their wallet
+      await getProviderOrSigner();
+      setWalletConnected(true);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    // if wallet is not connected, create a new instance of Web3Modal and connect the MetaMask wallet
+    if (!walletConnected) {
+      // Assign the Web3Modal class to the reference object by setting it's `current` value
+      // The `current` value is persisted throughout as long as this page is open
+      web3ModalRef.current = new Web3Modal({
+        network: "mumbai",
+        providerOptions: {},
+        disableInjectedProvider: false,
+      });
+      connectWallet();
+      getProviderOrSigner();
+      loadNFTs();
+    }
+  }, [walletConnected]);
 
   if (loadingState === "loaded" && !nfts.length)
     return <h1 className="px-20 py-40 text-3xl">No items in marketplace</h1>;

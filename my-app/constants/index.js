@@ -1,5 +1,4 @@
-export const MARKET_PLACE_ADDRESS =
-  "0xe7586cC96fbEFCbb910d6bc0b520Bc9c31eb29f0";
+export const MARKET_PLACE_ADDRESS = "0x85DF777be23357A3ed60F596a5f045827EdA8643";
 
 export const abi = [
   {
@@ -118,6 +117,10 @@ export const abi = [
     ],
     name: "Transfer",
     type: "event",
+  },
+  {
+    stateMutability: "payable",
+    type: "fallback",
   },
   {
     inputs: [
@@ -327,6 +330,19 @@ export const abi = [
         internalType: "address",
         name: "",
         type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getBalance",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -574,5 +590,16 @@ export const abi = [
     outputs: [],
     stateMutability: "payable",
     type: "function",
+  },
+  {
+    inputs: [],
+    name: "withdraw",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    stateMutability: "payable",
+    type: "receive",
   },
 ];

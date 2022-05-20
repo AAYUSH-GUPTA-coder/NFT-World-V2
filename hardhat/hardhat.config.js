@@ -1,10 +1,13 @@
 /* hardhat.config.js */
 require("@nomiclabs/hardhat-waffle");
-require("dotenv").config({ path: ".env" });
+require("dotenv").config({ path: ".env.local" });
+require("@nomiclabs/hardhat-etherscan");
 
 const privatekey = process.env.privateKey;
 
 const ALCHEMY_API_KEY_URL = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY_URL;
+
+const POLYGONSCAN_KEY = process.env.POLYGONSCAN_KEY;
 
 module.exports = {
   defaultNetwork: "hardhat",
@@ -25,6 +28,11 @@ module.exports = {
         enabled: true,
         runs: 200,
       },
+    },
+  },
+  etherscan: {
+    apiKey: {
+      polygonMumbai: POLYGONSCAN_KEY,
     },
   },
 };

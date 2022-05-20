@@ -13,7 +13,22 @@ async function main() {
   export const marketplaceAddress = "${nftMarketplace.address}"
   `
   );
+
+  console.log("Sleeping.....");
+  // Wait for etherscan to notice that the contract has been deployed
+  await sleep(20000);
+
+  // Verify the contract after deploying
+  await hre.run("verify:verify", {
+    address: nftMarketplace.address,
+    constructorArguments: [],
+  });
 }
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 
 main()
   .then(() => process.exit(0))

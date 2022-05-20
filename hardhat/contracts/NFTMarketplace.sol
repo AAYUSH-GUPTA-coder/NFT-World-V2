@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
-// Created by Aayush Gupta, twitter @Aayush_gupta_ji
+/*
+@author Aayush Gupta. Twiiter: @Aayush_gupta_ji Github: AAYUSH-GUPTA-coder
+ */
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -13,7 +15,7 @@ contract NFTMarketplace is ERC721URIStorage {
     Counters.Counter private _itemsSold;
 
     // the price marketplace get for listing NFT for Sale
-    uint256 listingPrice = 0.0025 ether;
+    uint256 listingPrice = 0.025 ether;
     address payable owner;
 
     // storing market status of each NFT through tokenId => MarketItem
@@ -202,4 +204,22 @@ contract NFTMarketplace is ERC721URIStorage {
         }
         return items;
     }
+    
+    // get the contract balance
+    function getBalance() public view returns (uint256) {
+        return address(this).balance;
+    }
+
+    // withdraw balance
+    function withdraw() external {
+        uint256 amount = address(this).balance;
+        (bool sent, ) = owner.call{value: amount}("");
+        require(sent, "Failed to send Ether");
+    }
+
+    // Function to receive Ether. msg.data must be empty
+    receive() external payable {}
+
+    // Fallback function is called when msg.data is not empty
+    fallback() external payable {}
 }

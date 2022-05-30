@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
       >
         <Link href="/">
           <a style={{ marginLeft: "20px" }} className="neonText">
-            NFT WORLD
+            NFT SEA
           </a>
         </Link>
 

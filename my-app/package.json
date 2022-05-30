@@ -11,18 +11,18 @@
   "dependencies": {
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
-    "ethers": "^5.6.2",
+    "ethers": "^5.6.7",
     "ipfs-http-client": "^50.1.2",
-    "next": "12.1.4",
+    "next": "^12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
-    "web3modal": "^1.9.6"
+    "web3modal": "^1.9.7"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.4",
-    "eslint": "^8.14.0",
-    "eslint-config-next": "^12.1.5",
-    "postcss": "^8.4.12",
+    "autoprefixer": "^10.4.5",
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.5",
+    "postcss": "^8.4.5",
     "tailwindcss": "^3.0.24"
   }
 }

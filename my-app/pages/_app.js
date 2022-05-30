@@ -4,20 +4,20 @@ import Link from "next/link";
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <nav className="navbar" style={{ width: "100%" }}>
-        <label
-          className="navbar-toggle"
-          id="js-navbar-toggle"
-          htmlFor="chkToggle"
-        >
-          <i className="fa fa-bars"></i>
-        </label>
+      <nav
+        className="navbar"
+        style={{
+          width: "100%",
+          border: "2px solid white",
+          background: "rgba(255, 255, 255, 0.05)",
+        }}
+      >
         <Link href="/">
           <a style={{ marginLeft: "20px" }} className="neonText">
             NFT WORLD
           </a>
         </Link>
-        <input type="checkbox" id="chkToggle"></input>
+
         <ul className="main-nav" id="js-menu">
           <li>
             <Link href="/">
@@ -38,6 +38,11 @@ function MyApp({ Component, pageProps }) {
           <li>
             <Link href="/dashboard">
               <a className="nav-links"> Dashboard</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/news">
+              <a className="nav-links"> News</a>
             </Link>
           </li>
         </ul>

@@ -117,19 +117,19 @@ export default function Home() {
     return <h1 className="px-20 py-40 text-3xl">No items in marketplace</h1>;
   return (
     <div className="flex justify-center">
-      <div className="px-4" style={{ maxWidth: "1600px" }}>
+      <div className="px-4" style={{ maxWidth: "2600px" }}>
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-4"
           style={{ marginTop: "60px" }}
         >
           {nfts.map((nft, i) => (
-            <div key={i} className="card">
+            <div key={i} className="card ">
               <div className="card-header">
                 <img src={nft.image} alt="rover" />
               </div>
               <div className="card-body">
                 <span className="tag tag-teal">{nft.name}</span>
-                <h4>{nft.description}</h4>
+                <h4 style={{ marginTop: "23px" }}>{nft.description}</h4>
 
                 <div className="user">
                   {/* <img src="download1.jpg" alt="user" /> */}

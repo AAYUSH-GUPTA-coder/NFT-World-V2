@@ -55,20 +55,28 @@ export default function ResellNFT() {
 
   return (
     <div className="flex justify-center py-40">
-      <div className="w-1/2 flex flex-col pb-12">
+      <div className="w-1/2 flex flex-col pb-12" style={{ width: "350px" }}>
         <input
-          placeholder="Asset Price in Eth"
+          placeholder="Asset Price in Matic"
           className="mt-2 border rounded p-4"
           onChange={(e) =>
             updateFormInput({ ...formInput, price: e.target.value })
           }
         />
-        <div className="border shadow rounded-xl overflow-hidden">
+        <div
+          className="border shadow rounded-xl overflow-hidden"
+          style={{ width: "350px", marginTop: "25px" }}
+        >
           {image && <img className="rounded mt-4" width="350" src={image} />}
           <div className="p-4 bg-black">
-            <p className="text-2xl font-bold text-white">{nfts.name}</p>
+            <p
+              className="text-5x1 font-italic text-white"
+              style={{ color: "pink", fontSize: "50px" }}
+            >
+              {nfts.name}
+            </p>
             <br />
-            <p className="text-2xl font-bold text-white">{nfts.description}</p>
+            <p className="text-2x1 font-bold text-white">{nfts.description}</p>
           </div>
         </div>
         <button

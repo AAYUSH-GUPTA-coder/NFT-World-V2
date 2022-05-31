@@ -40,11 +40,11 @@ function MyApp({ Component, pageProps }) {
               <a className="nav-links"> Dashboard</a>
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/News">
               <a className="nav-links"> News</a>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
 

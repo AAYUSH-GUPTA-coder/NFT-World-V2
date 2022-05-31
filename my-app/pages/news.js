@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Coin from "./Coin";
 
-function news() {
+function News() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -61,4 +61,4 @@ function news() {
   );
 }
 
-export default news;
+export default News;

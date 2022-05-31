@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
             </Link>
           </li>
           <li>
-            <Link href="/news">
+            <Link href="/News">
               <a className="nav-links"> News</a>
             </Link>
           </li>
